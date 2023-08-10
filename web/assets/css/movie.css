@@ -1,0 +1,261 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.container {
+    margin: 50px auto 50px;
+
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.breadcrumb h5 {
+    margin-right: 10px;
+}
+
+.langs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.langs h5 {
+    margin-right: 10px;
+}
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-wrapper {
+    width: 50%;
+}
+
+.poster {
+    /*height: 600px;*/
+    width: 100%;
+
+    border-radius: 15px;
+}
+
+.other-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.other-info-tab-titles {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+}
+
+.other-info h4 {
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+.other-info-tab-hr {
+    margin: 0;
+    width: 105px;
+    border-color: #4C4BDD;
+}
+
+
+.reviews-title {
+    color: #4C4BDD;
+}
+
+
+.review-user {
+    margin: 10px auto;
+}
+
+.review-text {
+
+}
+
+.reviews {
+    padding: 0;
+}
+
+.reviews li {
+    list-style: none;
+}
+
+.description-wrapper {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 15px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.title {
+    margin: 0;
+}
+
+.director {
+    margin: 0;
+    font-weight: normal;
+}
+
+.text {
+    color: #737681;
+    line-height: 150%;
+}
+
+
+.file-upload {
+    width: 100%;
+    margin: 0 0;
+}
+
+.file-upload-btn {
+    width: 100%;
+    margin: 5px 0 0 0;
+    padding: 15px 0;
+    color: #fff;
+    background: #4C4BDD;
+    border: none;
+    border-radius: 10px;
+    transition: all .2s ease;
+    outline: none;
+    font-weight: 700;
+}
+
+.file-upload-btn:hover {
+    background: #504FE8;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.file-upload-btn:active {
+    border: 0;
+    transition: all .2s ease;
+}
+
+.file-upload-content {
+    display: none;
+    text-align: center;
+}
+
+.file-upload-input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.audio-upload-wrap {
+    margin-top: 20px;
+    border: 1px solid #E7E8E9;
+    border-radius: 10px;
+    position: relative;
+    background-color: #F9FAFC;
+}
+
+.audio-dropping,
+.audio-upload-wrap:hover {
+    background-color: #F9FAFC;
+    border: 1px solid #E2E3E4;
+    border-radius: 10px;
+}
+
+.audio-title-wrap {
+    padding: 0;
+    color: #222;
+}
+
+.drag-text {
+    text-align: center;
+}
+
+.drag-text h4 {
+    font-weight: 100;
+    color: #151828;
+    padding: 60px 0;
+}
+
+.file-upload-audio {
+    max-height: 100px;
+    max-width: 100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.remove-file {
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    background: #ffb3b3;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom: 4px solid #ffb3b3;
+    transition: all .2s ease;
+    outline: none;
+    font-weight: 700;
+}
+
+.remove-file:hover {
+    background: #ffb3b3;
+    color: #ffffff;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.remove-file:active {
+    border: 0;
+    transition: all .2s ease;
+}

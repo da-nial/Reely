@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IMDK | Movie List</title>
+
+    <link rel='icon' sizes='32x32'
+          href='https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png'/>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/movie-list.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h1 class="title">Movie List</h1>
+    <ul class="movie-list">
+        {{range .movies}}
+        <li>
+            <div class="item">
+                <a href="/v1/movies/{{ .ID }}?lang=EN">
+                    <img src="{{ .PosterURL }}" class="poster" alt="movie-poster">
+                </a>
+                <div class="description">
+                    <div>
+                        <h4 class="movie-title"><a href="/v1/movies/{{ .ID }}">{{ .Title }}</a></h4>
+                        <h5 class="movie-director text">Directed by {{ .Director }}</h5>
+                    </div>
+
+                    <div class="comment">
+                        <img src="/img/comment.png" class="comment-icon" alt="comment-icon">
+                        <h5 style="color: #4C4BDD"><a href="/v1/movies/{{ .ID }}"> Reviews </a></h5>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </li>
+        {{end}}
+    </ul>
+</div>
+
+</body>
+</html>

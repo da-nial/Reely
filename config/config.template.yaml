@@ -1,0 +1,20 @@
+db:
+  user: postgres
+  password: REDACTED
+  host: localhost:5432
+  name: IMDK
+
+server:
+  port: :8080
+
+kateb:
+  endpoint: https://api.eu-gb.speech-to-text.watson.cloud.ibm.com/instances/REDACTED
+  apiKey: REDACTED
+
+human:
+  endpoint: https://api.eu-gb.natural-language-understanding.watson.cloud.ibm.com/instances/REDACTED
+  apiKey: REDACTED
+
+dilmaj:
+  endpoint: https://api.eu-gb.language-translator.watson.cloud.ibm.com/instances/REDACTED
+  apiKey: REDACTED

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IMDK | Movie</title>
+
+    <link rel='icon' sizes='32x32'
+          href='https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png'/>
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/movie.css">
+
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="/js/upload_file.js"></script>
+</head>
+<body class="body">
+<div class="container">
+    <nav class="nav">
+        <div class="breadcrumb">
+            <h5><a href="/v1/movies">Movies</a></h5>
+            <h5>/</h5>
+            <h5 class="text">{{ .movie.Title }}</h5>
+        </div>
+        <div class="langs">
+            <h5><a href="/v1/movies/{{ .movie.ID }}?lang=en">EN</a></h5>
+            <h5><a href="/v1/movies/{{ .movie.ID }}?lang=fr" class="text">FR</a></h5>
+            <h5><a href="/v1/movies/{{ .movie.ID }}?lang=es" class="text">ES</a></h5>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="poster-wrapper">
+            <img src="{{ .movie.PosterURL }}" class="poster" alt="movie-poster">
+            <div class="other-info">
+                <div class="other-info-tab-titles">
+                    <h4 class="reviews-title">User Reviews</h4>
+                    <h4>FAQ</h4>
+                </div>
+                <hr class="other-info-tab-hr"/>
+            </div>
+            <ul class="reviews">
+                {{range .reviews}}
+                <li>
+                    <h4 class="review-user">Unknown User • Esfand 6, 1400</h4>
+                    <p class="text">
+                        {{ .Text }}
+                    </p>
+                    <hr/>
+                </li>
+                {{end}}
+            </ul>
+        </div>
+
+
+        <div class="description-wrapper">
+            <div>
+                <h2 class="title">{{ .movie.Title }}</h2>
+                <h3 class="director">Directed by {{ .movie.Director }}</h3>
+                <p class="text">{{ .movie.Description }}</p>
+            </div>
+
+            <div class="file-upload">
+                <form id="upload-review-form" action="/v1/reviews/movies/{{ .movie.ID }}" method="POST"
+                      enctype="multipart/form-data"
+                >
+                    <div class="audio-upload-wrap">
+                        <input name="review-audio" id="review-audio" class="file-upload-input" form="upload-review-form"
+                               type='file' onchange="readURL(this);"
+                               accept="audio/*"/>
+                        <div class="drag-text">
+                            <h4>Upload your review as an audio file</h4>
+                        </div>
+                    </div>
+
+                    <div class="file-upload-content">
+                        <img class="file-upload-audio" src="/img/audio.png" alt="your review"/>
+                        <div class="audio-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-file">
+                                Remove
+                                <span class="image-title">Uploaded Image</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button class="file-upload-btn" type="submit" form="upload-review-form" value="submit">
+                        Add Review
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
